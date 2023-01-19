@@ -42,8 +42,8 @@ public class LocalMobileDriver implements WebDriverProvider {
                 .setDeviceName(config.deviceName())
                 .setPlatformVersion(config.platformVersion())
                 .setApp(app.getAbsolutePath())
-                .setAppPackage("todoist:")
-                .setAppActivity("todoist://upcoming");
+                //.setAppPackage("com.todoist")
+                .setAppWaitActivity("com.todoist.activity.HomeActivity");
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 
