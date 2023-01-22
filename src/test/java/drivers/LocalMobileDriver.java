@@ -36,14 +36,13 @@ public class LocalMobileDriver implements WebDriverProvider {
 
         UiAutomator2Options options = new UiAutomator2Options();
         options.merge(capabilities);
-
         options.setAutomationName(ANDROID_UIAUTOMATOR2)
                 .setPlatformName(config.platformName())
                 .setDeviceName(config.deviceName())
                 .setPlatformVersion(config.platformVersion())
                 .setApp(app.getAbsolutePath())
-                //.setAppPackage("com.todoist")
-                .setAppWaitActivity("com.todoist.activity.HomeActivity");
+                .setAppWaitPackage("com.todoist")
+                .setAppWaitActivity("com.todoist.activity.WelcomeActivity");
         return new AndroidDriver(getAppiumServerUrl(), options);
     }
 

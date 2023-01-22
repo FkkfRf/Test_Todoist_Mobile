@@ -20,6 +20,7 @@ public class BaseTest {
     @BeforeAll
     public static void setup() {
         MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
+
         String caseEmulate = mobileConfig.deviceEmulate();
 
         switch (caseEmulate) {

@@ -31,4 +31,9 @@ public interface MobileConfig extends Config {
     @Key("passwordBS")
     String passwordBS();
 
+    @Key("email")
+    String Email();
+    @Key("password")
+    String Passord();
+
 }
