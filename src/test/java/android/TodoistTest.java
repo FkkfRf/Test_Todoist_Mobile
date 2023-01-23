@@ -4,11 +4,8 @@ import android.page.ChangeTimePage;
 import android.page.LoginPage;
 import android.page.MainPage;
 import config.MobileConfig;
-import io.appium.java_client.AppiumBy;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.Test;
-
-import static com.codeborne.selenide.Selenide.$;
 
 public class TodoistTest extends BaseTest {
     LoginPage loginPage = new LoginPage();
@@ -22,7 +19,6 @@ public class TodoistTest extends BaseTest {
     @Test
     void addTaskTest() {
         loginPage.loginByEmail(loginEmail, loginPassword);
-        $(AppiumBy.id("com.todoist:id/fab")).click();
         changeTimePage.selectChangeTime();
         mainPage.clickPlusButton();
         mainPage.inputTaskName("Задача 1", "Описание задачи 1");

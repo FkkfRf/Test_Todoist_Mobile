@@ -10,18 +10,16 @@ import static com.codeborne.selenide.Selenide.$$;
 
 public class LoginPage {
     private ElementsCollection
-    editTextWiget = $$(AppiumBy.className("android.widget.EditText"));
+            editTextWiget = $$(AppiumBy.className("android.widget.EditText"));
     private final SelenideElement
             pageContinueOptions = $(AppiumBy.id("com.todoist:id/more_signin_options")),
             selectLoginByEmail = $(AppiumBy.id("com.todoist:id/email_login")),
-
             emailInput = $(AppiumBy.className("android.widget.EditText")),
             showPasswodButton = $(AppiumBy.className("android.widget.ImageView")),
             passwordInput = $$(AppiumBy.className("android.widget.EditText")).last(),
             loginButton = $$(AppiumBy.className("android.widget.TextView")).findBy(text("Log in"));
 
-
-    public void loginByEmail(String email,String password) {
+    public void loginByEmail(String email, String password) {
         pageContinueOptions.click();
         selectLoginByEmail.click();
         editTextWiget.first().click();
@@ -31,5 +29,4 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         loginButton.click();
     }
-
 }
