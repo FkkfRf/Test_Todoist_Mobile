@@ -16,12 +16,19 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class BaseTest {
+public static String loginEmail;
+    public static String loginPassword;
+    private static String caseEmulate;
 
     @BeforeAll
     public static void setup() {
+
         MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
 
-        String caseEmulate = mobileConfig.deviceEmulate();
+        loginEmail = mobileConfig.Email();
+        loginPassword  = mobileConfig.Passord();
+
+        caseEmulate = mobileConfig.deviceEmulate();
 
         switch (caseEmulate) {
             case ("browserstack"):

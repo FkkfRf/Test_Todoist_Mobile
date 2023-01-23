@@ -11,11 +11,15 @@ import static com.codeborne.selenide.Selenide.$$;
 public class MainPage {
     private ElementsCollection
             taskDescriptions = $$(AppiumBy.id("com.todoist:id/description")),
-            buttons1 = $$(AppiumBy.id("android:id/button1"));
-    ;
+            buttons1 = $$(AppiumBy.id("android:id/button1")),
+            texts = $$(AppiumBy.id("com.todoist:id/description")),
+            descriptions = $$(AppiumBy.id("com.todoist:id/description"));
+
     private SelenideElement
             plusButton = $(AppiumBy.id("com.todoist:id/fab")),
-            taskName = $(AppiumBy.id("android:id/message"));
+            taskName = $(AppiumBy.id("android:id/message")),
+            menuButton = $(AppiumBy.className("android.widget.ImageButton"));
+
 
     public void clickPlusButton() {
         plusButton.exists();
@@ -26,5 +30,14 @@ public class MainPage {
         taskName.sendKeys(name);
         taskDescriptions.findBy(Condition.text("Description")).sendKeys(description);
         buttons1.get(1).click();
+    }
+
+    public void checkAddTask(String name, String description) {
+        texts.findBy(Condition.text(name));
+        descriptions.findBy(Condition.text(description));
+    }
+
+    public void clickMenuButton() {
+        menuButton.click();
     }
 }
