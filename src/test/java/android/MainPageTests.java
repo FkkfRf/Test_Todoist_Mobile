@@ -17,7 +17,6 @@ public class MainPageTests extends BaseTest {
     ChangeTimePage changeTimePage = new ChangeTimePage();
     MainPage mainPage = new MainPage();
     ProjectPage projectPage = new ProjectPage();
-    MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
 
     @DisplayName("Добавить задачу")
     @Test
@@ -43,7 +42,7 @@ public class MainPageTests extends BaseTest {
                 changeTimePage.selectChangeTime());
         step("Нажать кнопку меню", () ->
                 mainPage.clickMenuButton());
-        step("Проверить, что попали на страницу проектов", () ->
+        step("Проверить, что попали на экран проектов", () ->
                 projectPage.checkProjectPage("Projects"));
         step("Кликнуть по кнопке добавления проектов +", () ->
                 projectPage.clickAddProjectButon());

@@ -15,10 +15,15 @@ public class ProjectPage {
     private SelenideElement
             addProjectButton = $(AppiumBy.id("com.todoist:id/add")),
             projectName = $(AppiumBy.id("com.todoist:id/name")),
-            submitButton = $(AppiumBy.id("com.todoist:id/menu_form_submit"));
+            submitButton = $(AppiumBy.id("com.todoist:id/menu_form_submit")),
+            profileButton = $(AppiumBy.id("com.todoist:id/profile_settings"));
 
     public void checkProjectPage(String name) {
         projectTexts.findBy(Condition.text(name)).exists();
+    }
+
+    public void clickProfileButton() {
+        profileButton.click();
     }
 
     public void clickAddProjectButon() {

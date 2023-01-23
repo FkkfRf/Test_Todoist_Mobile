@@ -20,6 +20,9 @@ public class MainPage {
             taskName = $(AppiumBy.id("android:id/message")),
             menuButton = $(AppiumBy.className("android.widget.ImageButton"));
 
+    public void checkMainPage() {
+        plusButton.exists();
+    }
 
     public void clickPlusButton() {
         plusButton.exists();
