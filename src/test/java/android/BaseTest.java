@@ -1,5 +1,6 @@
 package android;
 
+import android.page.*;
 import com.codeborne.selenide.Configuration;
 import config.MobileConfig;
 import drivers.BrowserstackMobileDriver;
@@ -16,17 +17,24 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class BaseTest {
-public static String loginEmail;
+    public static String loginEmail;
     public static String loginPassword;
     private static String caseEmulate;
+    LoginPage loginPage = new LoginPage();
+    MainPage mainPage = new MainPage();
+    ProjectPage projectPage = new ProjectPage();
+    ReschedulePage reschedulePage = new ReschedulePage();
+    AlarmPage alarmPage = new AlarmPage();
+    TimeZonePage timeZonePage = new TimeZonePage();
+    ChangeTimePage changeTimePage = new ChangeTimePage();
 
     @BeforeAll
     public static void setup() {
 
         MobileConfig mobileConfig = ConfigFactory.create(MobileConfig.class);
-
         loginEmail = mobileConfig.Email();
-        loginPassword  = mobileConfig.Passord();
+        loginPassword = mobileConfig.Passord();
+
 
         caseEmulate = mobileConfig.deviceEmulate();
 
