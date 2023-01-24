@@ -3,6 +3,7 @@ package android;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import static android.DataForTests.*;
 import static com.codeborne.selenide.Selenide.back;
 import static io.qameta.allure.Allure.step;
 
@@ -17,8 +18,8 @@ public class MainPageTests extends BaseTest {
             mainPage.clickPlusButton();
         });
         step("Создать задачу", () -> {
-            mainPage.inputTaskName("Задача 1", "Описание задачи 1");
-            mainPage.checkAddTask("Задача 1", "Описание задачи 1");
+            mainPage.inputTaskName(taskName, taskDescription);
+            mainPage.checkAddTask(taskName, taskDescription);
         });
     }
 
@@ -33,8 +34,8 @@ public class MainPageTests extends BaseTest {
             mainPage.clickMenuButton();
             projectPage.checkProjectPage("Projects");
             projectPage.clickAddProjectButon();
-            projectPage.createProject("Проект 1");
-            projectPage.checkNewProjectName("Проект 1");
+            projectPage.createProject(projectName);
+            projectPage.checkNewProjectName(projectName);
             back();
         });
         step("Найти созданный проект в общем списке проектов", () -> {
