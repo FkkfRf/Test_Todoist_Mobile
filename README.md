@@ -52,7 +52,7 @@
 
 ## :triangular_flag_on_post: Отчет о результатах тестирования в Allure Report
 
-<img width="4%" title="Allure Report" src="images/logo/AllureReport-logo.svg"> 
+<img width="4%" title="Allure Report" src="images/logo/AllureReport-logo.png"> 
 
 #### ✓ Главная страница Allure-отчета содержит следующие информационные блоки:
 
