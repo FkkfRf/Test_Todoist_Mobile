@@ -3,7 +3,6 @@ package android;
 import android.page.*;
 import com.codeborne.selenide.Configuration;
 import config.MobileConfig;
-import drivers.BrowserstackMobileDriver;
 import drivers.LocalMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -35,19 +34,7 @@ public class BaseTest {
         loginEmail = mobileConfig.Email();
         loginPassword = mobileConfig.Passord();
 
-
-        caseEmulate = mobileConfig.deviceEmulate();
-
-        switch (caseEmulate) {
-            case ("browserstack"):
-                Configuration.browser = BrowserstackMobileDriver.class.getName();
-                break;
-            case ("real"):
-                break;
-            default:
-                Configuration.browser = LocalMobileDriver.class.getName();
-                break;
-        }
+        Configuration.browser = LocalMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 
