@@ -1,5 +1,6 @@
 package android;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.text.SimpleDateFormat;
@@ -9,6 +10,8 @@ import java.util.TimeZone;
 import static io.qameta.allure.Allure.step;
 
 public class RescheduleTests extends BaseTest{
+
+    @DisplayName("Добавить текущее время в планировщике")
     @Test
     public void addTimeInScheduler(){
 
