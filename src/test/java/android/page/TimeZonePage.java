@@ -13,6 +13,7 @@ public class TimeZonePage {
 
     @Step("Кликнуть кнопку установки времени TIME ZONE, NO TIME, OK")
     public void clickAnswer(String answer) {
-        confirmButton.findBy(text(answer));
+
+        confirmButton.findBy(text(answer)).click();
     }
 }

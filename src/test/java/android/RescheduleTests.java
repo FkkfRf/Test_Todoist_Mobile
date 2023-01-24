@@ -25,10 +25,11 @@ public class RescheduleTests extends BaseTest{
         step("Авторизация", () -> {
             loginPage.loginByEmail(loginEmail, loginPassword);
             changeTimePage.selectChangeTime();
-            mainPage.clickPlusButton();
         });
-        step("Добавить время планировщике", () -> {
+        step("Добавить время в планировщике", () -> {
             mainPage.clickReschedulerButton();
+            reschedulePage.clickAddTimeButton();
+            timeZonePage.clickAnswer("NO TIME");
             reschedulePage.clickAddTimeButton();
             timeZonePage.clickAnswer("OK");
             reschedulePage.checkSchedulerTime(timeNow);
