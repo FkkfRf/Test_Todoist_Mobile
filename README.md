@@ -92,7 +92,3 @@
 <p align="center">
   <img title="mobile Video" src="images/screenshots/mobile/mobile.gif" width="500">
 </p>
-
-
-
-
